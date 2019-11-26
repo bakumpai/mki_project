@@ -1,3 +1,5 @@
+## Teaching Assistant API
+
 ## Installing
 Install `python` at least version `3.6`, download [here](https://www.python.org) 
 
