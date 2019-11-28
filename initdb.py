@@ -1,5 +1,5 @@
-from database import init_db
+from database import init_db as migrate
 from database import seed
 
-init_db()
+migrate()
 seed()

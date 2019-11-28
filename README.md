@@ -1,35 +1,42 @@
 ## Teaching Assistant API
 
+These endpoints allow you to get a useful data about teaching assistant of some course.
+All API Endpoint follows RFC 7797 that rules about JSON Web Signature (JWS) Unencoded Payload Option.
+
 ## Installing
-Install `python` at least version `3.6`, download [here](https://www.python.org) 
+
+Install `python` at least version `3.6`, download [here](https://www.python.org)
 
 After python installed, Follow this instructions
+
 ```bash
 git clone https://github.com/bakumpai/mki_project
 python3 initdb.py
 env FLASK_APP=main.py flask run
 ```
 
+## API Authorization
+
+All API Endpoint contain Authorization such as Basic Authorization, username and password is
+
+```
+Username: admin
+Password: project@MKI2019!
+```
+
 ## API Endpoint
-These endpoints allow you to get a useful data about teaching assistant of some course
-## GET
-`http://localhost:5000`[/api/v1/teaching_assistant](#get-apiv1teaching_assistant) <br/>
-`http://localhost:5000`[/api/v1/users](#get-apiv1users) <br/>
 
-## POST
-`http://localhost:5000`[/api/v1/teaching_assistant](#/api/v1/teaching_assistant) <br/>
-`http://localhost:5000`[/api/v1/users](#/api/v1/users) <br/>
-___
+All API Endpoint served at:
+
+```
+Production API : http://15-mki.cs.ui.ac.id
+```
+
+---
+
 ### GET /api/v1/teaching_assistant
+
 Get teaching assistant information for a given course name and the year of the course
-
-**Parameters**
-
-|          Name | Required |  Type   | Description                                                                                                                                                           |
-| -------------:|:--------:|:-------:| --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|     `course` | required | -  | It contains name and year of the course
-|     `name` | required | List  | List of course name. <br/><br/> No need to write full name of the course, your can just write first word or last word of the course's name.<br/><br/> Example : ["CS11","Winter"]
-|     `year` | required | Integer  | Year of the course.<br/><br/> Every course has year attribute, it useful for identifying the certain course by their year.<br/><br/>CS1121 Data Structure & Algorithm Winter 2015, it means DSA course for Winter 2015 and it has different teaching assistant than DSA Winter 2020
 
 **Request Example**
 
@@ -74,8 +81,10 @@ Get teaching assistant information for a given course name and the year of the c
 
 ```
 
-___
+---
+
 ### GET /api/v1/users
+
 Get all users data, don't need any parameters, just send a request and we will give you everything.
 
 **Response**
@@ -103,8 +112,10 @@ Get all users data, don't need any parameters, just send a request and we will g
 }
 ```
 
-___
+---
+
 ### POST /api/v1/teaching_assistant
+
 It has secret feature, we think you don't need to know about it, it's none of your business and has nothing to do with you anyway.
 
 **Response**
@@ -116,8 +127,10 @@ It has secret feature, we think you don't need to know about it, it's none of yo
 }
 ```
 
-___
+---
+
 ### POST /api/v1/users
+
 With this feature, you can do anything to user's data. Update, delete, and adding new data, just do whatever you want with it. It's good right?
 
 **Request Example**
@@ -130,7 +143,7 @@ With this feature, you can do anything to user's data. Update, delete, and addin
 		"name":"budi",
 		"email":"dwad@gmail.com"
 		},
-	"_options":"add"
+	"options":"add"
 }
 
 
@@ -149,4 +162,3 @@ With this feature, you can do anything to user's data. Update, delete, and addin
     }
 }
 ```
-

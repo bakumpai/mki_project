@@ -31,15 +31,14 @@ def seed():
 
     objects = list()
 
-    for idx in range(len(ta_names)):
-        objects.append(TeachingAssistant(ta_names[idx]))
+    for idx, name in enumerate(ta_names):
+        objects.append(TeachingAssistant(name))
         objects.append(Course(courses[idx], 2019, idx + 1))
 
     for name in ['satrio', 'nugroho', 'lengkap']:
         objects.append(User(name, name + '@example.com'))
 
     db_session.bulk_save_objects(objects)
-
     db_session.commit()
 
 
