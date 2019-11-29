@@ -116,7 +116,7 @@ Get all users data, don't need any parameters, just send a request and we will g
 
 ### POST /api/v1/teaching_assistant
 
-It has secret feature, we think you don't need to know about it, it's none of your business and has nothing to do with you anyway.
+It has secret feature, we don't think you need to know about it, it's none of your business and has nothing to do with you anyway.
 
 **Response**
 
